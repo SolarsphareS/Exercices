@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h id="tab"></h>
+    <br>
+    <button onclick="inversement(tableau)">Inverser le tableau ?</button>
+    <br>
+    <h id="tabinverse"></h>
+</head>
+
+<body>
+    <script>
+        const tableau = [1, 2, 3, 4]
+        document.getElementById("tab").innerHTML = tableau;
+
+        function inversement(a)
+        {
+            for (let i = 0; i < a.length / 2; i++)
+            {
+                let miroir = a[i];
+                a[i] = a[a.length - 1 - i];
+                a[a.length - 1 - i] = miroir;
+            }
+            document.getElementById("tabinverse").innerHTML = tableau;
+        }
+    </script>
+</body>
+
+</html>

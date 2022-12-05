@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>Choisissez quel tableau mettre en premier:</h1>
+    <button onclick="transfert(tableau1, tableau2)">Tableau 1</button>
+    <p id="Tab1"></p>
+    <button onclick="transfert(tableau2, tableau1)">Tableau 2</button>
+    <p id="Tab2"></p>
+    <p id="TabX"></p>
+</head>
+
+<body>
+    <script>
+        const tableau1 = [1, 2, 3, 4, "dinding"];
+        const tableau2 = [6, "bottle", 8, 9, 10];
+        document.getElementById("Tab1").innerHTML = tableau1;
+        document.getElementById("Tab2").innerHTML = tableau2;
+
+        console.log("Pré fonction: \n", tableau1, tableau2);
+
+        function transfert(a, b)
+        {
+            const tableauX = [];
+            for (let i = 0; i < a.length; i++)
+            {
+                tableauX.push(a[i]);
+            }
+            for (let j = 0; j < b.length; j++)
+            {
+                tableauX.push(b[j]);
+            }
+            document.getElementById("TabX").innerHTML = "Résultat : " + tableauX;
+            console.log("Après fonction: \n", tableau1, tableau2, tableauX);
+        }
+    </script>
+</body>
+
+</html>
